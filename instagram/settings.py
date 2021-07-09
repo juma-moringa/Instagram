@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'doubletap.apps.DoubletapConfig',
     'bootstrap3',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
