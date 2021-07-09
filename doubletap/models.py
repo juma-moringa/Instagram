@@ -18,7 +18,6 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.user.name
     
-    
      #save method.
     def save_profile(self):
         self.user
@@ -41,7 +40,7 @@ class Image(models.Model):
     likes = models.ManyToManyField(User, related_name='likes', blank=True)
     comments = models.CharField(max_length=30,blank=True)
 
-   
+     #Image methods
      #save the image method.
     def save_image(self):
         self.save()
