@@ -12,14 +12,23 @@ class Profile(models.Model):
     bio = models.TextField()
 
     default=''
+
     #Profile methods
  
     def __str__(self):
         return self.user.user.name
-
+    
+    
+     #save method.
     def save_profile(self):
         self.user
 
+     #search method.
+    @classmethod
+    def search_profile(cls, name):
+        return cls.objects.filter(user__username__icontains=name).all()
+
+     #delete method.   
     def delete_profile(self):
         self.delete()  
 
@@ -31,3 +40,22 @@ class Image(models.Model):
     profile = models.ForeignKey(Profile,on_delete = models.CASCADE)
     likes = models.ManyToManyField(User, related_name='likes', blank=True)
     comments = models.CharField(max_length=30,blank=True)
+
+   
+     #save the image method.
+    def save_image(self):
+        self.save()
+
+    #delete the image method.
+    def delete_image(self):
+        self.delete()
+
+   
+    #update the image method.
+    @classmethod
+    def update_image(cls, id, image):
+        cls.objects.filter(id=id).update(image=image)
+ 
+
+    def __str__(self):
+        return self.image_name   
