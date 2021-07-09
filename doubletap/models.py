@@ -7,8 +7,21 @@ from django.contrib.auth.models import User
 
 #user profile.
 class Profile(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE, default='0')
     profile_photo = CloudinaryField('image')
     bio = models.TextField()
+
+    default=''
+    #Profile methods
+ 
+    def __str__(self):
+        return self.user.user.name
+
+    def save_profile(self):
+        self.user
+
+    def delete_profile(self):
+        self.delete()  
 
 # user post.
 class Image(models.Model):
