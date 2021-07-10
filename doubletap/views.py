@@ -39,5 +39,20 @@ def insta_profile(request):
     else:
         user_profile_form = UserprofileForm(instance=request.user)
         user_form = UserProfileUpdateForm(instance=request.user)
-    return render(request, 'user_profile.html',{ "profile_form": user_profile_form,"user_form":user_form})
+    return render(request, 'user_profile.html',{"user_profile_form": user_profile_form,"user_form":user_form})
+
+    # update user profile function 
+@login_required(login_url='/accounts/login/')  
+def Update_insta_Profile(request):
+    if request.method == 'POST':
+        user_form = UserProfileUpdateForm(request.POST, instance=request.user)
+        profile_form = UserprofileForm(request.POST, request.FILES, instance=request.user)
+        if  profile_form.is_valid():
+            user_form.save(commit=True)
+            profile_form.save()
+            return redirect('profile')
+    else: 
+        profile_form = UserprofileForm(instance=request.user)
+        user_form = UserProfileUpdateForm(instance=request.user)
+    return render(request, 'update_userprofile.html',{"user_form":user_form,"profile_form": profile_form})
          

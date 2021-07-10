@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%load bootstrap3%}
+{%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 md-6 m-auto card">
+
+            <div>
+                <form method="POST" action="{%url 'update_profile'%}">
+                    {%csrf_token%}
+                    {% bootstrap_form profile_form%}
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">update Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -5,9 +5,9 @@ from django.contrib.auth import views as auth_views
 
 
 urlpatterns=[
-    url(r'^$',views.index,name='index'),
+    url(r'^$',views.index, name='index'),
     url('register/',views.register, name='registration'),
-    url('login/', auth_views.LoginView.as_view(), name='login'),
-    url('profile/', views.insta_profile, name='profile'),
- 
+    url('login/',auth_views.LoginView.as_view(), name='login'),
+    url('profile/',views.insta_profile, name='profile'),
+    url('Update_insta_Profile/',views.Update_insta_Profile, name='update_profile'),
 ]

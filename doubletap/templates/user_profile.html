@@ -23,22 +23,22 @@
             </div>
             <hr>
             <div class="media-body">
-                <h2 class="account-heading">{{user.username}}</h2>
-                <p class="text-secondary">{{user.email}}</p>
-                <p>{{user.profile.bio}}</p>
+                <h2>{{user.username}}</h2>
+                <p>{{user.email}}</p>
+                <p>{{user.bio}}</p>
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-md-6">
                         <p>Following</p>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-md-6">
                         <p>Followers</p>
                     </div>
                     <br>
                    
                 </div>
                 <hr>
-                <a href="/">
-                    <button class="btn btn-primary">Edit Profile</button>
+                <a href="{%url 'update_profile'%}">
+                    <button class="btn btn-success">Edit Profile</button>
                 </a>
 
             </div>
