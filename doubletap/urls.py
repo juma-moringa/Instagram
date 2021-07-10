@@ -10,4 +10,5 @@ urlpatterns=[
     url('login/',auth_views.LoginView.as_view(), name='login'),
     url('profile/',views.insta_profile, name='profile'),
     url('Update_insta_Profile/',views.Update_insta_Profile, name='update_profile'),
+    url('gramblog/', views.Post_gram, name='Postblog'),
 ]
