@@ -1,9 +1,10 @@
 
-from doubletap.models import Profile
+from doubletap.models import Image, Profile
 from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-#signform
+
+#signupform
 class SignUpForm(UserCreationForm):
     email = forms.EmailField()
 
@@ -22,4 +23,10 @@ class UserProfileUpdateForm(forms.ModelForm):
     email = forms.EmailField()
     class Meta:
         model = User
-        fields = ['username','email']   
+        fields = ['username','email']
+
+#new insta form      
+class  PostForm(forms.ModelForm):
+    class Meta:
+        model = Image
+        exclude = ['profile','comments','likes']

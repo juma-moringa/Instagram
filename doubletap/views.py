@@ -1,4 +1,4 @@
-from doubletap.models import Profile
+from doubletap.models import Image, Profile
 from django.contrib.auth import authenticate, login
 from django.http import request
 from doubletap.forms import SignUpForm, UserProfileUpdateForm, UserprofileForm
@@ -55,4 +55,4 @@ def Update_insta_Profile(request):
         profile_form = UserprofileForm(instance=request.user)
         user_form = UserProfileUpdateForm(instance=request.user)
     return render(request, 'update_userprofile.html',{"user_form":user_form,"profile_form": profile_form})
-         
+
