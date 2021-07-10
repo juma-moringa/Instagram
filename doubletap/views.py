@@ -1,7 +1,7 @@
 from doubletap.models import Image, Profile
 from django.contrib.auth import authenticate, login
 from django.http import request
-from doubletap.forms import SignUpForm, UserProfileUpdateForm, UserprofileForm
+from doubletap.forms import PostForm, SignUpForm, UserProfileUpdateForm, UserprofileForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 
@@ -56,3 +56,18 @@ def Update_insta_Profile(request):
         user_form = UserProfileUpdateForm(instance=request.user)
     return render(request, 'update_userprofile.html',{"user_form":user_form,"profile_form": profile_form})
 
+@login_required(login_url='/accounts/login/')
+def Post_gram(request):
+    current_user = request.user
+    profile = Profile.objects.get(user = current_user)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)        
+        if form.is_valid():
+            image=form.cleaned_data.get('image')
+            image_caption=form.cleaned_data.get('image_caption')
+            gram = Image(image = image,image_caption= image_caption, profile=profile)
+            gram.savePost() 
+        return redirect('home')
+    else:
+        form = PostForm()
+    return render(request, 'blogs.html', {"form": form})         
