@@ -8,5 +8,6 @@ urlpatterns=[
     url(r'^$',views.index,name='index'),
     url('register/',views.register, name='registration'),
     url('login/', auth_views.LoginView.as_view(), name='login'),
+    url('profile/', views.insta_profile, name='profile'),
  
 ]

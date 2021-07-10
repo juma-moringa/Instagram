@@ -27,6 +27,10 @@ class Profile(models.Model):
     def search_profile(cls, name):
         return cls.objects.filter(user__username__icontains=name).all()
 
+    @classmethod
+    def update_profile(cls, id, profile_photo,bio):
+        cls.objects.filter(id=id).update(profile_photo=profile_photo,bio=bio)
+ 
      #delete method.   
     def delete_profile(self):
         self.delete()  
@@ -50,10 +54,10 @@ class Image(models.Model):
         self.delete()
 
    
-    #update the image method.
+    #update the image caption method.
     @classmethod
-    def update_image(cls, id, image):
-        cls.objects.filter(id=id).update(image=image)
+    def update_image_caption(cls, id, image_caption):
+        cls.objects.filter(id=id).update(image_caption=image_caption)
  
 
     def __str__(self):
