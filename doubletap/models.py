@@ -64,11 +64,11 @@ class Image(models.Model):
         return self.image_name
 
 
- # user comments        
+# user comments        
 class Comment(models.Model):
     comment = models.TextField()
-    post= models.ForeignKey(Image, on_delete=models.CASCADE)
-    user= models.ForeignKey(Profile, on_delete=models.CASCADE)
+    user= models.ForeignKey(Profile,on_delete=models.CASCADE)
+    post= models.ForeignKey(Image,  on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True, null=True)
     
     #comments methods
@@ -77,3 +77,8 @@ class Comment(models.Model):
 
     def delete_comment(self):
         self.delete()
+
+#follow 4 follow
+class Follow(models.Model):
+    follower = models.ForeignKey(Profile,  related_name='following',on_delete=models.CASCADE)
+    following = models.ForeignKey(Profile,related_name='followers',on_delete=models.CASCADE)
