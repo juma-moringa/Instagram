@@ -9,12 +9,14 @@
 
 <body>
     <nav class="navbar navbar">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">Instagram</a>
+                <img src="https://img.icons8.com/ios/50/000000/instagram-new--v2.png" />
             </div>
             <!-- Adding a search form  -->
-            <div class="col-sm-4 col-md-4 navbar-right">
+            <br>
+            <div class="col-sm- col-md-8 navbar-center" style="text-align:center;">
 
                 <form class="form-inline" action="{%url 'search' %}">
                     <div class="md-form my-0">
@@ -27,7 +29,7 @@
             </div>
 
             <!-- search form end -->
-            <div class="col-sm-6 col-md-6">
+            <!-- <div class="col-sm-6 col-md-6">
                 {% if user.is_authenticated %}
                 <ul>
                     <li class="dropdown">
@@ -54,6 +56,21 @@
                     <a class='btn btn-default' href="/accounts/login">Login</a>
                 </li>
                 {% endif %}
+            </div> -->
+            
+            <div>
+                <a href="/"><img src="https://img.icons8.com/material-sharp/24/000000/home.png" /></a>
+                <a style="padding-left: 10px;" href="/"><img
+                        src="https://img.icons8.com/material-outlined/24/000000/facebook-messenger--v5.png" /></a>
+                <a style="padding-left: 10px;" href="gramblog/"><img
+                        src="https://img.icons8.com/ios-glyphs/24/000000/plus-2-math.png" /></a>
+                <a style="padding-left: 10px;" href="/"><img
+                        src="https://img.icons8.com/material-outlined/24/000000/compass.png" /></a>
+                <a style="padding-left: 10px;" href="/"><img
+                        src="https://img.icons8.com/material-outlined/24/000000/filled-like.png" /></a>
+                <a style="padding-left: 10px;" href="profile/"><img
+                        src="https://img.icons8.com/ios-filled/30/000000/voice-presentation--v2.png" /></a>
+                        <hr>
             </div>
         </div>
 
