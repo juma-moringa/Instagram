@@ -14,6 +14,7 @@ class SignUpForm(UserCreationForm):
 
 #user profile form
 class UserprofileForm(forms.ModelForm):
+
     class Meta:
         model = Profile
         fields = [ 'profile_photo', 'bio']  
@@ -27,6 +28,7 @@ class UserProfileUpdateForm(forms.ModelForm):
 
 #new insta form      
 class  PostForm(forms.ModelForm):
+    
     class Meta:
         model = Image
         exclude = ['profile','comments','likes']
