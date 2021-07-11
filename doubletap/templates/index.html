@@ -9,10 +9,10 @@
 <div class="container">
     <div class="col-md-8" style="border-radius:1%;">
         <div class="card m-3">
-            <img style="width: 350px; height:350px" src="{{post.image.url}}" class="img-thumbnail" >
-            <a href="/" >
-                <p>{{post.comments.Count}}</p>
-                View comments
+            <img style="width: 350px; height:350px" src="{{post.image.url}}" class="img-thumbnail">
+            <a href="/">
+                <p></p>
+                Comments
             </a>
             <p><strong class="text-secondary pl-3">{{post.profile}} <br></strong> {{post.image_caption}}.</p>
             <br>
@@ -20,5 +20,4 @@
     </div>
 </div>
 {% endfor %}
-
 {% endblock %}

@@ -16,8 +16,7 @@ def index(request):
     # registration function
 def register(request):
     if request.method=="POST":
-        form=SignUpForm(request.POST)
-        
+        form=SignUpForm(request.POST) 
         if form.is_valid():
            form.save()
            username = form.cleaned_data.get('username')
@@ -71,4 +70,18 @@ def Post_gram(request):
         return redirect('index')
     else:
         form = PostForm()
-    return render(request, 'blogs.html', {"form": form})         
+    return render(request, 'blogs.html', {"form": form})   
+
+
+def search_profile(request): 
+    if 'search_insta_user' in request.GET and request.GET['search_insta_user']:
+        name = request.GET.get("search_insta_user")
+        searchResults = Profile.search_insta_profile(name)
+        message = f'name'
+        results=searchResults
+        message = message
+        return render(request,'instasearch.html', {'results':results,'message':message})
+    else:
+        message = "Your search did not match any profile on Instagram."
+    return render(request, 'instasearch.html', {'message': message})
+

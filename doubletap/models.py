@@ -24,7 +24,7 @@ class Profile(models.Model):
 
      #search method.
     @classmethod
-    def search_profile(cls, name):
+    def search_insta_profile(cls, name):
         return cls.objects.filter(user__username__icontains=name).all()
 
     @classmethod
