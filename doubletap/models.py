@@ -71,3 +71,9 @@ class Comment(models.Model):
     user= models.ForeignKey(Profile, on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True, null=True)
     
+    #comments methods
+    def save_comment(self):
+        self.user
+
+    def delete_comment(self):
+        self.delete()
