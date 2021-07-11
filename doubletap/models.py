@@ -16,7 +16,7 @@ class Profile(models.Model):
     #Profile methods
  
     def __str__(self):
-        return self.user.user.name
+        return self.user.username
     
      #save method.
     def save_profile(self):

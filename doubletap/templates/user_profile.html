@@ -25,7 +25,7 @@
             <div class="media-body">
                 <h2>{{user.username}}</h2>
                 <p>{{user.email}}</p>
-                <p>{{user.bio}}</p>
+                <p>{{user.profile.bio}}</p>
                 <div class="row">
                     <div class="col-md-6">
                         <p>Following</p>
@@ -34,17 +34,14 @@
                         <p>Followers</p>
                     </div>
                     <br>
-                   
                 </div>
                 <hr>
                 <a href="{%url 'update_profile'%}">
                     <button class="btn btn-success">Edit Profile</button>
                 </a>
-
             </div>
         </div>
     </div>
 </div>
-
 </div>
 {%endblock content%}

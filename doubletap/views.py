@@ -10,7 +10,8 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='/accounts/login/')
 def index(request):
     profile = Profile.objects.all()
-    return render(request,'index.html',{"profile":profile,})
+    posts = Image.objects.all()
+    return render(request,'index.html',{"profile":profile, "posts":posts})
 
     # registration function
 def register(request):
@@ -66,8 +67,8 @@ def Post_gram(request):
             image=form.cleaned_data.get('image')
             image_caption=form.cleaned_data.get('image_caption')
             gram = Image(image = image,image_caption= image_caption, profile=profile)
-            gram.savePost() 
-        return redirect('home')
+            gram.save() 
+        return redirect('index')
     else:
         form = PostForm()
     return render(request, 'blogs.html', {"form": form})         
