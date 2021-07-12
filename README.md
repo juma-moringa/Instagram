@@ -43,6 +43,7 @@ Install  all dependancies that will make the app run/function
 
 ### Run the app
 * python3.6 manage.py runserver
+* open your browser with the local host; `127.0.0.1:8000` provided on the terminal
 
 ## Testing the application
 * python3 manage.py test doubletap
