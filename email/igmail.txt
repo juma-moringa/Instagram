@@ -1,2 +1,2 @@
 Hello {{name}}
-Welcome to  Instagram 2.0 You will find the most exciting trends in town.
+Welcome to Instagram 2.0 You will find the most exciting trends in town.
