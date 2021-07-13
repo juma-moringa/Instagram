@@ -3,7 +3,7 @@
 {% load bootstrap3 %}
 {% block content %}
 {{block.super}}
-<div class="container">
+<div class="container" style="margin-left: 150px;">
     <hr>
     <a>
         <div class="row">
@@ -20,15 +20,19 @@
 <br>
 {% for post in posts%}
 <div class="container">
-    <div class="col-md-8 col-sm-6 ">
-        <div class="card m-3">
-            <img style="width: 100%; height:350px" src="{{post.image.url}}" class="img-thumbnail">
-            <img src="https://img.icons8.com/material-outlined/24/000000/filled-like.png" />
-            <img src="https://img.icons8.com/ios-glyphs/30/000000/filled-sent.png" />
-            <a href="/"> <img src="https://img.icons8.com/material-outlined/24/000000/speech-bubble--v2.png" /> </a>
-            <p><strong class="text-secondary pl-3">{{post.profile}} <br></strong> {{post.image_caption}}.</p>
-         
-            <br>
+    <div class="row">
+        <div class="col-md-8 col-sm-6 ">
+            <div class="card m-3">
+                <img style="width: 100%; height:350px" src="{{post.image.url}}" class="img-thumbnail">
+                <img src="https://img.icons8.com/color/24/000000/like--v3.png" />
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/filled-sent.png" />
+                <a href="/"> <img src="https://img.icons8.com/material-outlined/24/000000/speech-bubble--v2.png" /> </a>
+                <p><strong class="text-secondary pl-3">{{post.profile}} <br></strong> {{post.image_caption}}.</p>
+
+                <br>
+            </div>
+        </div>
+        <div class="col-md-4">
         </div>
     </div>
 </div>

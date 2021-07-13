@@ -16,7 +16,8 @@ Logged in users can view photos uploaded by other users in the home page of appl
 1. Ubuntu Software
 2. Python3.8.10
 3. Postgres
-4. python virtual environment
+4. python virtual environment (virtual:venv).
+5. Text editor - Visual Studio Code Editor.
 
 ### Clone the  project Repo
 Run the following command on the terminal:
