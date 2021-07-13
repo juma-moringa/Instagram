@@ -5,7 +5,7 @@
 Juma Allan.
 
 ## Description
-This is a simple website replication of the instagram application. A user first needs to  create an account and logging  in. 
+This is a simple website replication of the instagram application. A user first needs to  create an account before logging  in. 
 Once you are logged in you can upload images.
 Logged in users can view photos uploaded by other users in the home page of application.
 
