@@ -26,7 +26,9 @@ Run the following command on the terminal:
 
 ###  Install and activate virtual environment
 Activate virtual environment using python3.8 
+1. Install
 * python3 -m venv virtual
+2. Activate
 * source venv/bin/activate
 
 ### Install dependancies
@@ -63,7 +65,7 @@ Install  all dependancies that will make the app run/function
 
 ## Live Link
 
-[View Live Site.](https://instagram2.0.herokuapp.com/)
+[View Live Site.](https://gram-the-insta.herokuapp.com/)
 
 ## License
 
