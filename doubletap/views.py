@@ -56,21 +56,34 @@ def Update_insta_Profile(request):
         user_form = UserProfileUpdateForm(instance=request.user)
     return render(request, 'update_userprofile.html',{"user_form":user_form,"profile_form": profile_form})
 
+# @login_required(login_url='/accounts/login/')
+# def Post_gram(request):
+#     current_user = request.user
+#     profile = Profile.objects.get(user = current_user)
+#     if request.method == 'POST':
+#         form = PostForm(request.POST, request.FILES)        
+#         if form.is_valid():
+#             image=form.cleaned_data.get('image')
+#             image_caption=form.cleaned_data.get('image_caption')
+#             gram = Image(image = image,image_caption= image_caption, profile=profile)
+#             gram.save() 
+#         return redirect('index')
+#     else:
+#         form = PostForm()
+#     return render(request, 'blogs.html', {"form": form})   
 @login_required(login_url='/accounts/login/')
 def Post_gram(request):
-    current_user = request.user
-    profile = Profile.objects.get(user = current_user)
+    profile= Profile.objects.get_or_create(user=request.user)
     if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)        
+        form = PostForm(request.POST,request.FILES)
         if form.is_valid():
-            image=form.cleaned_data.get('image')
-            image_caption=form.cleaned_data.get('image_caption')
-            gram = Image(image = image,image_caption= image_caption, profile=profile)
-            gram.save() 
-        return redirect('index')
+            image = form.save(commit = False)
+            image.profile = request.user.profile
+            image.save()
+            return redirect("index")
     else:
         form = PostForm()
-    return render(request, 'blogs.html', {"form": form})   
+    return render (request, 'blogs.html', {"form":form})    
 
 
 def search_profile(request): 

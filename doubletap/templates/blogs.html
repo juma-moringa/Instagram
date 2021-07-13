@@ -9,7 +9,7 @@
                     <h2 class="text-center">New Post </h2>
                 </div>
                 <div class="panel-body">
-                    <form  action="{%url 'Postblog'%}" method="post" enctype="multipart/form-data">
+                    <form  action="{%url 'newpost'%}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% bootstrap_form form %}
                         <div class="form-group">
