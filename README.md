@@ -52,7 +52,7 @@ Install  all dependancies that will make the app run/function
 * python3 manage.py test doubletap
 
 ## Admin dashboard
-* The admin dashboard can be accessed by clicking the instagram icons.
+* The admin dashboard can be accessed by clicking the instagram icon.
 `username: WOLLANDE`
 `password: Access254`
 
