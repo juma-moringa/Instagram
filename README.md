@@ -17,7 +17,7 @@ Logged in users can view photos uploaded by other users in the home page of appl
 2. Python3.8.10
 3. Postgres
 4. python virtual environment (virtual:venv).
-5. Text editor - Visual Studio Code Editor.
+5. Text editor - preferably Visual Studio Code Editor.
 
 ### Clone the  project Repo
 Run the following command on the terminal:
@@ -29,7 +29,7 @@ Activate virtual environment using python3.8
 1. Install
 * python3 -m venv virtual
 2. Activate
-* source venv/bin/activate
+* source virtual/bin/activate
 
 ### Install dependancies
 Install  all dependancies that will make the app run/function
@@ -45,7 +45,7 @@ Install  all dependancies that will make the app run/function
 * python3 manage.py migrate
 
 ### Run the app
-* python3.6 manage.py runserver
+* python3 manage.py runserver
 * open your browser with the local host; `127.0.0.1:8000` provided on the terminal
 
 ## Testing the application
