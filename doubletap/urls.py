@@ -11,7 +11,6 @@ urlpatterns=[
     url('logout/',auth_views.LogoutView.as_view(),name='logout'),
     url('profile/',views.insta_profile, name='profile'),
     url('Update_insta_Profile/',views.Update_insta_Profile, name='update_profile'),
-    # url('gramblog/', views.Post_gram, name='Postblog'),
     url('search/', views.search_profile,name='search'),
     url(r'^new/image$', views.Post_gram, name='newpost'),
     

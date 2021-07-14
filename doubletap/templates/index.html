@@ -10,7 +10,7 @@
             {%for prof in profile %}
             <img style=" width: 75px;
                 height: 75px;  border-radius: 50%;  border: 3px solid rgb(248, 10, 157);"
-                src="{{prof.user.profile.profile_photo.url}}" alt="profile photo not available" class="rounded-circle">
+                src="{{prof.user.profile.profile_photo.url}}" alt="ppic" class="rounded-circle">
             <a href="{%url 'profile' %}" style="text-decoration:none;" class="p">{{prof.user}}</a>
             {%endfor%}
         </div>
